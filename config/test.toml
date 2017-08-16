@@ -1,0 +1,77 @@
+[Blue_Robot.0]
+x = -0.5
+y = 0.0
+dir = 0
+turnon = true
+
+[Blue_Robot.1]
+x = -1.0
+y = 0.0
+dir = 0
+turnon = true
+
+[Blue_Robot.2]
+x = -1.5
+y = 0.0
+dir = 0
+turnon = true
+
+[Blue_Robot.3]
+x = -2.0
+y = 0.0
+dir = 0
+turnon = true
+
+[Blue_Robot.4]
+x = -2.5
+y = 0.0
+dir = 0
+turnon = true
+
+[Blue_Robot.5]
+x = -3.0
+y = 0.0
+dir = 0
+turnon = true
+
+[Yellow_Robot.0]
+x = 0.5
+y = 0.0
+dir = 180
+turnon = true
+
+[Yellow_Robot.1]
+x = 1.0
+y = 0.0
+dir = 180
+turnon = true
+
+[Yellow_Robot.2]
+x = 1.5
+y = 0.0
+dir = 180
+turnon = true
+
+[Yellow_Robot.3]
+x = 2.0
+y = 0.0
+dir = 180
+turnon = true
+
+[Yellow_Robot.4]
+x = 2.5
+y = 0.0
+dir = 180
+turnon = true
+
+[Yellow_Robot.5]
+x = 3.0
+y = 0.0
+dir = 180
+turnon = true
+
+[Ball]
+x = 0.0
+y = 0.0
+vx = 0.0
+vy = 0.0

@@ -1,0 +1,65 @@
+[Ball]
+y = 0.0741915740967
+x = -0.00694660806656
+vx = 0.0
+vy = 0.0
+[Yellow_Robot.5]
+y = 1.43596792443e-14
+x = 2.99997387695
+dir = 180.000005009
+turnon = true
+[Yellow_Robot.4]
+y = 1.43596792443e-14
+x = 2.49997387695
+dir = 180.000005009
+turnon = true
+[Blue_Robot.1]
+y = -1.12293846097e-14
+x = -0.999973815918
+dir = 0.0
+turnon = true
+[Blue_Robot.0]
+y = -1.0427199707
+x = -0.434702667236
+dir = -0.0
+turnon = true
+[Yellow_Robot.1]
+y = 0.919373596191
+x = -1.29937023926
+dir = 180.000005009
+turnon = true
+[Yellow_Robot.0]
+y = 9.95696512979e-17
+x = 0.499973815918
+dir = -180.000005009
+turnon = true
+[Yellow_Robot.3]
+y = 5.22023986538e-14
+x = 1.99997387695
+dir = -180.000005009
+turnon = true
+[Yellow_Robot.2]
+y = -1.30916210938
+x = -0.483012481689
+dir = 180.000005009
+turnon = true
+[Blue_Robot.3]
+y = -0.86859979248
+x = -1.31224841309
+dir = -0.0
+turnon = true
+[Blue_Robot.5]
+y = 1.09762927913e-14
+x = -2.99997387695
+dir = 0.0
+turnon = true
+[Blue_Robot.2]
+y = -5.18421156698e-15
+x = -1.49997387695
+dir = -0.0
+turnon = true
+[Blue_Robot.4]
+y = 0.435417572021
+x = 0.86651940918
+dir = 0.0
+turnon = true
