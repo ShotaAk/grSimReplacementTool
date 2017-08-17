@@ -19,6 +19,27 @@ Please install some libraries following...
 $ ./init.sh
 ```
 
+Before using this tool, please rewrite multicast address and port 
+in Sender and Receiver class.
+
+
+*main.py*
+```python
+class Sender:
+    def __init__(self):
+        # initialize a socket
+        self._addr = "127.0.0.1"
+        self._port = 20012
+        self._socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+```
+
+```python
+class Receiver:
+    def __init__(self):
+        self._addr = "224.5.23.2"
+        self._port = 10006
+        self._collecting_time = 1.5
+```
 
 ## Usage (example)
 
