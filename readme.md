@@ -1,6 +1,6 @@
 # grSimReplacementTool
 
-This is suport tool for [grsim](https://github.com/RoboCup-SSL/grSim) robots and ball replacement.
+This is support tool for [grsim](https://github.com/RoboCup-SSL/grSim) robots and ball replacement.
 
 You can do replacement like [**this**](https://twitter.com/chmod_x_akasit/status/897835136380682240) 
 and [**this**](https://twitter.com/chmod_x_akasit/status/897458004672434176).

@@ -65,22 +65,20 @@ class Sender:
 
 
 class RobotData:
-    def __init__(self):
-        self.robot_id = 0
-        self.x = 0.0
-        self.y = 0.0
-        self.dir = 0.0
-        self.turnon = True
-        self.is_enable = False
+    def __init__(self, robot_id=0, x=0.0, y=0.0, direc=0.0, turnon=True):
+        self.robot_id = robot_id
+        self.x = x # millimeters
+        self.y = y # millimeters
+        self.dir = direc # radian
+        self.turnon = turnon
 
 
 class BallData:
-    def __init__(self):
-        self.x = 0.0
-        self.y = 0.0
-        self.vx = 0.0
-        self.vy = 0.0
-        self.is_enable = False
+    def __init__(self, x=0.0, y=0.0, vx=0.0, vy=0.0):
+        self.x = 0.0 # millimeters
+        self.y = 0.0 # millimeters
+        self.vx = 0.0 # m/s
+        self.vy = 0.0 # m/s
 
 
 class Receiver:
@@ -99,9 +97,16 @@ class Receiver:
         self._ball = BallData()
         self._blue_robots = []
         self._yellow_robots = []
+
         for i in range(6):
-            self._blue_robots.append(RobotData())
-            self._yellow_robots.append(RobotData())
+            pos_x = 500 + 500*i
+            pos_y = -4000
+            pos_dir = math.pi * 0.5
+            
+            self._blue_robots.append(RobotData(robot_id=i, x=-pos_x, y=pos_y, 
+                direc=pos_dir, turnon=False))
+            self._yellow_robots.append(RobotData(robot_id=i, x=pos_x, y=pos_y, 
+                direc=pos_dir, turnon=False))
 
 
     def init_socket(self):
@@ -173,7 +178,6 @@ class Receiver:
             self._ball.y = ball.y
             self._ball.vx = 0.0
             self._ball.vy = 0.0
-            self._ball.is_enable = True
 
         for robot in self._ssl_wrapper.detection.robots_blue:
             current_id = robot.robot_id
@@ -182,7 +186,6 @@ class Receiver:
             self._blue_robots[current_id].y = robot.y
             self._blue_robots[current_id].dir = robot.orientation
             self._blue_robots[current_id].turnon = True
-            self._blue_robots[current_id].is_enable = True
 
         for robot in self._ssl_wrapper.detection.robots_yellow:
             current_id = robot.robot_id
@@ -191,7 +194,6 @@ class Receiver:
             self._yellow_robots[current_id].y = robot.y
             self._yellow_robots[current_id].dir = robot.orientation
             self._yellow_robots[current_id].turnon = True
-            self._yellow_robots[current_id].is_enable = True
 
 
     def convertDataToTOMLDict(self):
@@ -205,8 +207,7 @@ class Receiver:
         yellow_robot_dict = self.makeRobotDict(self._yellow_robots)
 
         output_dict = {}
-        if self._ball.is_enable:
-            output_dict["Ball"] = ball_dict
+        output_dict["Ball"] = ball_dict
         output_dict["Blue_Robot"] = blue_robot_dict
         output_dict["Yellow_Robot"] = yellow_robot_dict
 
@@ -216,14 +217,13 @@ class Receiver:
     def makeRobotDict(self, robots):
         output_dict = {}
         for robot in robots:
-            if robot.is_enable:
-                robot_dict = {}
-                robot_dict["x"] = robot.x * 0.001
-                robot_dict["y"] = robot.y * 0.001
-                robot_dict["dir"] = robot.dir * 180.0 / math.pi
-                robot_dict["turnon"] = robot.turnon
+            robot_dict = {}
+            robot_dict["x"] = robot.x * 0.001
+            robot_dict["y"] = robot.y * 0.001
+            robot_dict["dir"] = robot.dir * 180.0 / math.pi
+            robot_dict["turnon"] = robot.turnon
 
-                output_dict[str(robot.robot_id)] = robot_dict
+            output_dict[str(robot.robot_id)] = robot_dict
 
         return output_dict
 
